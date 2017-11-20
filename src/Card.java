@@ -37,6 +37,11 @@ public class Card {
 		System.out.println("Rank not found in list.");
 	}
 	
+	//get rank
+	public char getRank() {
+		return rank;
+	}
+	
 	//set suit within our requirements
 	public void setSuit(char s) {
 		//check to see if it's in RANKS
@@ -46,7 +51,12 @@ public class Card {
 				return;
 			} 
 		}
-		System.out.println("Rank not found in list.");
+		System.out.println("Suit not found in list.");
+	}
+	
+	//get suit
+	public char getSuit() {
+		return suit;
 	}
 	
 	
@@ -54,6 +64,26 @@ public class Card {
 	public String toString() {
 		String cardInfo = "Rank: " + rank + " Suit: " + suit;
 		return cardInfo;
+	}
+	
+	public boolean isGreaterThan(Card c) {
+		int index1 = 0;
+		int index2 = 0;
+		for (int i = 0; i < RANKS.length; i++) {
+			if (this.rank == RANKS[i]) { //c1
+				index1 = i;
+			}
+			if (c.getRank() == RANKS[i]) { //c2
+				index2 = i;
+			}
+		}
+		//if the index is bigger in RANKS
+		if (index1 > index2) {
+			return true;
+		} else {
+			return false;
+		}
+		
 	}
 	
 	
