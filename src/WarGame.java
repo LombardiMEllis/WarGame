@@ -25,13 +25,16 @@ public class WarGame {
 			System.out.println("Card 2: " + c2);
 			
 			//compare cards
-			if (c1.isGreaterThan(c2)) {
+			if (c1.isEqualTo(c2)) {
+				System.out.println("Tie");
+			} else if (c1.isGreaterThan(c2)) {
 				player1++;
 			} else {
 				player2++;
 			}
 			System.out.println("Player 1 Score: " + player1);
 			System.out.println("Player 2 Score: " + player2);
+			System.out.print("\n");
 		}
 	}
 

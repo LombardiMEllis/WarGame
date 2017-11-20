@@ -86,5 +86,24 @@ public class Card {
 		
 	}
 	
+	public boolean isEqualTo(Card c) {
+		int index1 = 0;
+		int index2 = 0;
+		for (int i = 0; i < RANKS.length; i++) {
+			if (this.rank == RANKS[i]) { //c1
+				index1 = i;
+			}
+			if (c.getRank() == RANKS[i]) { //c2
+				index2 = i;
+			}
+		}
+		//if the index is equal in RANKS
+		if (index1 == index2) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
 	
 }
